@@ -1,0 +1,12 @@
+---
+config:
+  look: neo
+  theme: redux-dark
+---
+classDiagram
+    class JFrame
+    class HelloFrame{
+        +HelloFrame()
+        +main(List~sring~ arg)void
+ }
+        JFrame<|-- HelloFrame
