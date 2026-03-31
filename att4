@@ -1,0 +1,16 @@
+sequenceDiagram
+     actor Employee 
+    Employee->>anOrder: calculatePrice
+
+    loop
+        anOrder->>+anOrderLine: getQuantity
+        anOrderLine-->>-anOrder: quantity
+        anOrder-->>+anOrderLine:getProduct
+        anOrderLine-->>-anOrder: aProduct
+        anOrder->>+aProduct: getPreacingDetails
+        aProduct-->>anOrder: PriecingDetails
+        anOrder->>+anOrder: CalculateBasePrice
+        anOrder->>+anOrder: CalculateDiscounts
+        anOrder->>+aCostomer:getDiscountInfo
+        aCostomer-->>-anOrder: Disconunt info
+    end
